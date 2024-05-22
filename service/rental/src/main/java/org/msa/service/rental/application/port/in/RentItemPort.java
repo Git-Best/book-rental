@@ -1,8 +1,8 @@
-package org.msa.service.rental.application.usecase;
+package org.msa.service.rental.application.port.in;
 
 import org.msa.service.rental.adaptor.in.web.dto.RentalCardOutputDto;
 import org.msa.service.rental.adaptor.in.web.dto.UserItemInputDto;
 
-public interface RentItemUsecase {
+public interface RentItemPort {
     RentalCardOutputDto rentItem(UserItemInputDto userItemInputDto);
 }
