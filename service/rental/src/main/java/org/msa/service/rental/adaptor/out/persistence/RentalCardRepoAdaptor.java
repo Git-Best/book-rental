@@ -10,13 +10,16 @@ import java.util.Optional;
 @Repository
 @RequiredArgsConstructor
 public class RentalCardRepoAdaptor implements RentalCardRepoPort {
+
+    private final RentalCardRepo rentalCardRepository;
+
     @Override
     public Optional<RentalCard> loadRentalCard(String userId) {
-        return Optional.empty();
+        return rentalCardRepository.findByMemberId(userId);
     }
 
     @Override
     public RentalCard saveRentalCard(RentalCard rentalCard) {
-        return null;
+        return rentalCardRepository.save(rentalCard);
     }
 }
