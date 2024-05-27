@@ -3,7 +3,7 @@ package org.msa.service.rental.application.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.msa.service.rental.adaptor.in.web.dto.RentalResultOutputDto;
-import org.msa.service.rental.adaptor.in.web.dto.clearOverdueInfoDto;
+import org.msa.service.rental.adaptor.in.web.dto.ClearOverdueInfoDto;
 import org.msa.service.rental.application.port.in.ClearOverdueItemService;
 import org.msa.service.rental.application.port.out.RentalCardRepoPort;
 import org.msa.service.rental.domain.RentalCard;
@@ -17,7 +17,7 @@ public class ClearOverdueItemServiceImpl implements ClearOverdueItemService {
     private final RentalCardRepoPort rentalCardRepoPort;
 
     @Override
-    public RentalResultOutputDto clearOverdueItem(clearOverdueInfoDto clearOverdueInfoDto) {
+    public RentalResultOutputDto clearOverdueItem(ClearOverdueInfoDto clearOverdueInfoDto) {
         RentalCard rentalCard = rentalCardRepoPort.loadRentalCard(clearOverdueInfoDto.getUserId()).orElseThrow(() -> new IllegalArgumentException("RentalCard not found"));
         rentalCard.makeAvailableRental(clearOverdueInfoDto.getPoint());
 
