@@ -13,11 +13,11 @@ public class BookRepoAdaptor implements BookRepoPort {
 
     @Override
     public Book loadBook(Long bookNo) {
-        return null;
+        return bookRepo.findById(bookNo).get();
     }
 
     @Override
     public Book saveBook(Book book) {
-        return null;
+        return bookRepo.save(book);
     }
 }

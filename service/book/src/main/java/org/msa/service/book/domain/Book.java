@@ -1,25 +1,26 @@
 package org.msa.service.book.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.msa.service.book.domain.vo.*;
 
 import java.time.LocalDate;
 
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long no;
 
     private String title;
 
+    @Embedded
     private BookDescription description;
 
     private Classification classification;
