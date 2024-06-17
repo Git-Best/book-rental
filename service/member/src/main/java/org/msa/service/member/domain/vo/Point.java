@@ -1,5 +1,8 @@
 package org.msa.service.member.domain.vo;
 
+import lombok.Data;
+
+@Data
 public class Point {
     private long pointValue;
 
