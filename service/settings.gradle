@@ -1,3 +1,4 @@
 rootProject.name = 'service'
 include 'rental'
 include 'book'
+include 'member'
