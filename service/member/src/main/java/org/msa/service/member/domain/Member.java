@@ -1,5 +1,11 @@
 package org.msa.service.member.domain;
 
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,13 +17,26 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
 public class Member {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberNo;
+
+    @Embedded
     private IdName idName;
+
+    @Embedded
     private Password password;
+
+    @Embedded
     private Email email;
+
+    @ElementCollection
     private List<Authority> authorities = new ArrayList<>();
+
+    @Embedded
     private Point point;
 
     public static Member registerMember(IdName idName, Password pwd, Email email) {

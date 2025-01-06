@@ -1,8 +1,8 @@
-package org.msa.service.member.application.port.in;
+package org.msa.service.member.application.service;
 
 import lombok.RequiredArgsConstructor;
-import org.msa.service.member.adaptor.in.web.dto.InquiryMemberService;
 import org.msa.service.member.adaptor.in.web.dto.MemberOutPutDto;
+import org.msa.service.member.application.port.in.InquiryMemberService;
 import org.msa.service.member.application.port.out.MemberRepoPort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

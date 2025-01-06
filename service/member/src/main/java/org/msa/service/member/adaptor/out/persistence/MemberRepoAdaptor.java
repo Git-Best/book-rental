@@ -20,11 +20,11 @@ public class MemberRepoAdaptor implements MemberRepoPort {
 
     @Override
     public Member loadMember(long memberNo) {
-        return null;
+        return memberRepo.findById(memberNo).get();
     }
 
     @Override
     public Member loadMemberByIdName(IdName idName) {
-        return null;
+        return memberRepo.findMemberByIdName(idName).get();
     }
 }
