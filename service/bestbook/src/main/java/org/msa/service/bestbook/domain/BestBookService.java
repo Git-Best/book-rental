@@ -30,7 +30,11 @@ public class BestBookService {
             bestBook.increaseBestBookCount();
         }
 
-        bookRepository.save(bestBook);
+        saveBook(bestBook);
+    }
+
+    public BestBook saveBook(BestBook bestBook) {
+        return bookRepository.save(bestBook);
     }
 
     public BestBook updateBook(String id, BestBook book) {
