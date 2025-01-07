@@ -7,6 +7,9 @@ import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.msa.service.rental.domain.event.ItemRented;
+import org.msa.service.rental.domain.event.ItemReturned;
+import org.msa.service.rental.domain.event.OverdueCleared;
 import org.msa.service.rental.domain.vo.*;
 
 import java.time.LocalDate;
@@ -54,6 +57,18 @@ public class RentalCard {
         rentalCard.setRentStatus(RentStatus.RENT_AVAILABLE);
         rentalCard.setLateFee(LateFee.createLateFee());
         return rentalCard;
+    }
+
+    public static ItemRented createItemRentedEvent(IdName idName, Item item, long point) {
+        return new ItemRented(idName, item, point);
+    }
+
+    public static ItemReturned createItemReturnedEvent(IdName idName, Item item, long point) {
+        return new ItemReturned(idName, item, point);
+    }
+
+    public static OverdueCleared createOverdueClearedEvent(IdName idName, long point) {
+        return new OverdueCleared(idName, point);
     }
 
     public RentalCard rentItem(Item item) {
