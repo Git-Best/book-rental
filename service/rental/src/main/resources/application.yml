@@ -13,3 +13,12 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
         use_sql_comments: true
         format_sql: true
+
+producers:
+  bootstrap-servers: localhost:9092
+  topic1:
+    name: rental_rent
+  topic2:
+    name: rental_return
+  topic3:
+    name: overdue_clear

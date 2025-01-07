@@ -48,13 +48,13 @@ public class RentalController {
     }
 
     @PostMapping("/rentalcard/rent")
-    public ResponseEntity<RentalCardOutputDto> rentItem(@RequestBody UserItemInputDto userItemInputDto) {
+    public ResponseEntity<RentalCardOutputDto> rentItem(@RequestBody UserItemInputDto userItemInputDto) throws Exception {
         RentalCardOutputDto rentalCard = rentItemService.rentItem(userItemInputDto);
         return ResponseEntity.ok(rentalCard);
     }
 
     @PostMapping("/rentalcard/return")
-    public ResponseEntity<RentalCardOutputDto> returnItem(@RequestBody UserItemInputDto userItemInputDto) {
+    public ResponseEntity<RentalCardOutputDto> returnItem(@RequestBody UserItemInputDto userItemInputDto) throws Exception {
         RentalCardOutputDto rentalCard = returnItemService.returnItem(userItemInputDto);
         return ResponseEntity.ok(rentalCard);
     }
@@ -66,7 +66,7 @@ public class RentalController {
     }
 
     @PostMapping("/rentalcard/clearoverdue")
-    public ResponseEntity<RentalResultOutputDto> clearOverdueItem(@RequestBody ClearOverdueInfoDto clearOverdueInfoDto) {
+    public ResponseEntity<RentalResultOutputDto> clearOverdueItem(@RequestBody ClearOverdueInfoDto clearOverdueInfoDto) throws Exception {
         RentalResultOutputDto rentalResultOutputDto = clearOverdueItemService.clearOverdueItem(clearOverdueInfoDto);
         return ResponseEntity.ok(rentalResultOutputDto);
     }

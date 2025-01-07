@@ -4,5 +4,5 @@ import org.msa.service.rental.adaptor.in.web.dto.RentalCardOutputDto;
 import org.msa.service.rental.adaptor.in.web.dto.UserItemInputDto;
 
 public interface RentItemService {
-    RentalCardOutputDto rentItem(UserItemInputDto userItemInputDto);
+    RentalCardOutputDto rentItem(UserItemInputDto userItemInputDto) throws Exception;
 }
