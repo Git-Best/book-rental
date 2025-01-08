@@ -16,7 +16,7 @@ public class MakeAvailableServiceImpl implements MakeAvailableService {
     @Override
     public BookOutputDto available(Long bookNo) {
         Book book = bookRepoPort.loadBook(bookNo);
-        book.makeUnAvailable();
+        book.makeAvailable();
         return BookOutputDto.mapToDto(book);
     }
 }
