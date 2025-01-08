@@ -25,7 +25,7 @@ public class RentalProducer implements EventPort {
     private String TOPIC_RETURN;
 
     @Value("${producers.topic3.name}")
-    private String TOPIC_CLEAR
+    private String TOPIC_CLEAR;
 
     private final KafkaTemplate<String, ItemRented> kafkaTemplate1;
     private final KafkaTemplate<String, ItemReturned> kafkaTemplate2;

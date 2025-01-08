@@ -1,4 +1,4 @@
-package org.msa.service.rental.domain.vo;
+package org.msa.service.book.domain.event;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
-public class Item {
-    private Long no;
-    private String title;
+public class IdName {
+    private String id;
+    private String name;
 }

@@ -1,11 +1,10 @@
-package org.msa.service.rental.domain.event;
+package org.msa.service.member.domain.event;
 
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.msa.service.rental.domain.vo.IdName;
-import org.msa.service.rental.domain.vo.Item;
+import org.msa.service.member.domain.vo.IdName;
 
 @AllArgsConstructor
 @NoArgsConstructor

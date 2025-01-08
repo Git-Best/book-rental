@@ -1,4 +1,4 @@
-package org.msa.service.rental.domain.vo;
+package org.msa.service.member.domain.event;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
